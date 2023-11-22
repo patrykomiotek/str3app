@@ -34,10 +34,3 @@ export const Large: Story = {
     bgColor: "carrot",
   },
 };
-
-export const Small: Story = {
-  args: {
-    size: "small",
-    label: "Button",
-  },
-};
