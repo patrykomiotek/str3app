@@ -1,29 +1,9 @@
-import { useEffect, useState } from "react";
 import { fetchProducts } from "../services/products";
 import { ProductDto } from "../types/products";
+import { useApi } from "../../hooks/useApi";
 
 export const ProductsList = () => {
-  const [data, setData] = useState<ProductDto[]>();
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const response = await fetchProducts();
-        setData(response.data.records);
-      } catch (_error) {
-        // if (error instanceof InvalidBackedResponse) {
-        // }
-
-        setIsError(true);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    void loadData();
-  }, []);
+  const { data, isLoading, isError } = useApi<ProductDto[]>(fetchProducts);
 
   if (isLoading) {
     return <p>Loading...</p>;

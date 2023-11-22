@@ -1,12 +1,24 @@
 import { api } from "../../services/config";
 import { ProductDto, ProductsResponse } from "../types/products";
 
-export const fetchProducts = () => {
+export const fetchProducts = async () => {
   // TODO: parse
-  return api.get<ProductsResponse>("/products"); // trow new InvalidBackedResponse
+  try {
+    const response = await api.get<ProductsResponse>("/products");
+    return response.data.records;
+  } catch {
+    // TODO:
+    return [];
+  }
 };
 
-export const fetchProduct = (id: ProductDto["id"]) => {
+export const fetchProduct = async (id: ProductDto["id"]) => {
   // TODO: parse
-  return api.get<ProductDto>(`/products/${id}`); // trow new InvalidBackedResponse
+  try {
+    const response = await api.get<ProductDto>(`/products/${id}`);
+    return response.data;
+  } catch {
+    // TODO:
+    return {} as ProductDto;
+  }
 };

@@ -1,33 +1,16 @@
 import { useEffect, useState } from "react";
 import { fetchProduct } from "../services/products";
 import { ProductDto } from "../types/products";
+import { useApi } from "../../hooks/useApi";
 
 type Props = {
   id: string;
 };
 
 export const ProductDetails = ({ id }: Props) => {
-  const [data, setData] = useState<ProductDto | undefined>();
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const response = await fetchProduct(id);
-        setData(response.data);
-      } catch (_error) {
-        // if (error instanceof InvalidBackedResponse) {
-        // }
-
-        setIsError(true);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    void loadData();
-  }, []);
+  const { data, isLoading, isError } = useApi<ProductDto>(() =>
+    fetchProduct(id)
+  );
 
   if (isLoading) {
     return <p>Loading...</p>;
