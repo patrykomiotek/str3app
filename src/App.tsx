@@ -4,17 +4,19 @@ import "./App.css";
 import { Button, Text } from "./ui";
 import { Generator } from "./components/Generator";
 import { Counter } from "./components/Counter";
+import { RegistrationFormState } from "./components/RegistrationFormState";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <Text>Today is Wednesday</Text>
-      <Button label="Click me" />
+      {/* <Text>Today is Wednesday</Text> */}
+      {/* <Button label="Click me" /> */}
       {/* <Button label="Click me" bgColor="midnight-blue" color="clouds" /> */}
-      <Generator />
-      <Counter />
+      {/* <Generator /> */}
+      {/* <Counter /> */}
+      <RegistrationFormState />
     </>
   );
 }
