@@ -5,6 +5,7 @@ import { Button, Text } from "./ui";
 import { Generator } from "./components/Generator";
 import { Counter } from "./components/Counter";
 import { RegistrationFormState } from "./components/RegistrationFormState";
+import { RegistrationFormRefs } from "./components/RegistrationFormRefs";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,7 +17,8 @@ function App() {
       {/* <Button label="Click me" bgColor="midnight-blue" color="clouds" /> */}
       {/* <Generator /> */}
       {/* <Counter /> */}
-      <RegistrationFormState />
+      {/* <RegistrationFormState /> */}
+      <RegistrationFormRefs />
     </>
   );
 }
