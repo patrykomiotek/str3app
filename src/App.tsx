@@ -8,6 +8,7 @@ import { RegistrationFormState } from "./components/RegistrationFormState";
 import { RegistrationFormRefs } from "./components/RegistrationFormRefs";
 import { RegistrationFormRefsLegacy } from "./components/RegistrationFormRefsLegacy";
 import { MagicButton } from "./ui/MagicButton";
+import { ProductsList } from "./features/Products/ProductsList";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -35,11 +36,12 @@ function App() {
       {/* <RegistrationFormState /> */}
       {/* <RegistrationFormRefs /> */}
       {/* <RegistrationFormRefsLegacy /> */}
-      <MagicButton
+      {/* <MagicButton
         ref={buttonRef}
         label="Click me"
         onMouseEnter={handleMouseEnter}
-      />
+      /> */}
+      <ProductsList />
     </>
   );
 }
