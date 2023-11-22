@@ -9,7 +9,7 @@ interface FormData {
 
 export const RegistrationFormState = () => {
   const [formData, setFormData] = useState<FormData>({
-    email: "",
+    email: "jan@wp.pl",
     password: "",
     language: "",
   });
@@ -33,6 +33,8 @@ export const RegistrationFormState = () => {
   // const [password, setPassword] = useState();
   // const [language, setLanguage] = useState();
 
+  const { email, language, password } = formData;
+
   return (
     <>
       <Text>
@@ -41,15 +43,25 @@ export const RegistrationFormState = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">E-mail</label>
-          <input id="email" type="email" onChange={handleChange} />
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <label htmlFor="password">Password</label>
-          <input id="password" type="password" onChange={handleChange} />
+          <input
+            id="password"
+            type="password"
+            value={password}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <label htmlFor="language">Language</label>
-          <input id="language" onChange={handleChange} />
+          <input id="language" value={language} onChange={handleChange} />
         </div>
         <Button type="submit" label="Send" />
       </form>

@@ -5,7 +5,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { Button, Text } from "../../ui";
+import { Button, Input, Text } from "../../ui";
 
 interface FormData {
   email: string;
@@ -14,6 +14,8 @@ interface FormData {
 }
 
 export const RegistrationFormRefs = () => {
+  // register(name) -> createRef
+
   const emailFieldRef = useRef<HTMLInputElement>(null);
   const passwordFieldRef = useRef<HTMLInputElement>(null);
   const languageFieldRef = useRef<HTMLInputElement>(null);
@@ -34,18 +36,14 @@ export const RegistrationFormRefs = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="email">E-mail</label>
-        <input ref={emailFieldRef} id="email" type="email" />
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input ref={passwordFieldRef} id="password" type="password" />
-      </div>
-      <div>
-        <label htmlFor="language">Language</label>
-        <input ref={languageFieldRef} id="language" />
-      </div>
+      <Input
+        label="E-mail"
+        ref={emailFieldRef}
+        defaultValue="jan@wp.pl"
+        type="email"
+      />
+      <Input label="Password" ref={passwordFieldRef} type="password" />
+      <Input label="Language" ref={languageFieldRef} />
       <Button type="submit" label="Send" />
     </form>
   );
