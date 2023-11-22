@@ -3,6 +3,7 @@ import "./App.css";
 // import { Text as MyText } from "./ui";
 import { Button, Text } from "./ui";
 import { Generator } from "./components/Generator";
+import { Counter } from "./components/Counter";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,6 +14,7 @@ function App() {
       <Button label="Click me" />
       {/* <Button label="Click me" bgColor="midnight-blue" color="clouds" /> */}
       <Generator />
+      <Counter />
     </>
   );
 }
