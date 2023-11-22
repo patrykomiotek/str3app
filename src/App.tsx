@@ -9,6 +9,7 @@ import { RegistrationFormRefs } from "./components/RegistrationFormRefs";
 import { RegistrationFormRefsLegacy } from "./components/RegistrationFormRefsLegacy";
 import { MagicButton } from "./ui/MagicButton";
 import { ProductsList } from "./features/Products/ProductsList";
+import { ProductDetails } from "./features/Products/ProductDetails";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -41,7 +42,8 @@ function App() {
         label="Click me"
         onMouseEnter={handleMouseEnter}
       /> */}
-      <ProductsList />
+      {/* <ProductsList /> */}
+      <ProductDetails id="rec5c99tUqiFYiLb8" />
     </>
   );
 }

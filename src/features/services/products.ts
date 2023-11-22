@@ -1,7 +1,12 @@
 import { api } from "../../services/config";
-import { ProductsResponse } from "../types/products";
+import { ProductDto, ProductsResponse } from "../types/products";
 
 export const fetchProducts = () => {
-  // parse
+  // TODO: parse
   return api.get<ProductsResponse>("/products"); // trow new InvalidBackedResponse
+};
+
+export const fetchProduct = (id: ProductDto["id"]) => {
+  // TODO: parse
+  return api.get<ProductDto>(`/products/${id}`); // trow new InvalidBackedResponse
 };
