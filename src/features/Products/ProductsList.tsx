@@ -18,8 +18,13 @@ export const ProductsList = () => {
   return (
     <>
       {/* <h1>Products</h1> */}
-      <div>
-        <Link to={Route.CREATE_PRODUCT.path}>Create product</Link>
+      <div className="mt-2">
+        <Link
+          to={Route.CREATE_PRODUCT.path}
+          className="bg-blue-500 hover:bg-blue-700 text-white hover:text-white font-bold py-2 px-4 rounded"
+        >
+          <span>Create product</span>
+        </Link>
         <ul>
           {data &&
             data.map((elem) => (
