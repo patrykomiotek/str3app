@@ -44,5 +44,7 @@ export const fetchProduct = async (id: ProductDto["id"]) => {
 };
 
 export const createProduct = async (data: FieldValues) => {
-  return api.post("/products", { records: [{ fields: data }] });
+  return api.post<ProductsResponse>("/products", {
+    records: [{ fields: data }],
+  });
 };
