@@ -1,13 +1,25 @@
-import { Button } from "../../ui";
-import { useThemeContext } from "./ThemeContext";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { getMode, useThemeContext, Theme } from "./ThemeContext";
 
 export const ThemeSwitcher = () => {
+  const [theme, setTheme] = useState<Theme | null>(getMode());
   const context = useThemeContext();
   const handleClick = () => {
     context.toggle();
+    setTheme((theme) => (theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT));
   };
 
-  console.log(context.theme);
+  const icon = theme === Theme.LIGHT ? faMoon : faSun;
 
-  return <Button label="Switch theme" onClick={handleClick} />;
+  return (
+    <div className="ml-4">
+      <FontAwesomeIcon
+        icon={icon}
+        onClick={handleClick}
+        className="cursor-pointer"
+      />
+    </div>
+  );
 };

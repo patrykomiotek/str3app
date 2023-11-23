@@ -4,10 +4,9 @@ import {
   useContext,
   useEffect,
   useRef,
-  useState,
 } from "react";
 
-enum Theme {
+export enum Theme {
   LIGHT = "light",
   DARK = "dark",
 }
@@ -19,7 +18,7 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
-const getMode = () => {
+export const getMode = () => {
   if (window.matchMedia) {
     const matchesLightMode = window.matchMedia(
       "(prefers-color-scheme: light)"
