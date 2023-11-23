@@ -1,4 +1,5 @@
 import { api } from "../../services/config";
+import { FieldValues } from "../types/dtos";
 import { ProductDto, ProductsResponse } from "../types/products";
 
 export const fetchProducts = async () => {
@@ -21,4 +22,8 @@ export const fetchProduct = async (id: ProductDto["id"]) => {
     // TODO:
     return {} as ProductDto;
   }
+};
+
+export const createProduct = async (data: FieldValues) => {
+  return api.post("/products", { records: [{ fields: data }] });
 };

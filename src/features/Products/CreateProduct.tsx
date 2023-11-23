@@ -1,9 +1,15 @@
+import { createProduct } from "../services/products";
 import { FieldValues } from "../types/dtos";
 import { ProductForm } from "./ProductForm";
 
 export const CreateProduct = () => {
-  const handleSubmit = (data: FieldValues) => {
-    console.log(data);
+  const handleSubmit = async (data: FieldValues) => {
+    try {
+      const response = await createProduct(data);
+      console.log(response);
+    } catch {
+      console.error("Oh no!");
+    }
   };
 
   return (
