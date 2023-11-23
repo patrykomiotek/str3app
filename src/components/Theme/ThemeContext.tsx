@@ -22,7 +22,8 @@ export const useThemeContext = () => {
 
 const useTheme = () => {
   // const [theme, setTheme] = useState<Theme>(Theme.DARK);
-  const theme = useRef<Theme>(Theme.DARK);
+  const theme = useRef<Theme>(Theme.DARK); // Map, Set
+  // const theme = useRef(new Set()); // Map, Set
 
   const toggle = () => {
     // if (theme === Theme.DARK) {
