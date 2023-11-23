@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useRef, useState } from "react";
 
 enum Theme {
   LIGHT = "light",
@@ -21,13 +21,22 @@ export const useThemeContext = () => {
 };
 
 const useTheme = () => {
-  const [theme, setTheme] = useState<Theme>(Theme.DARK);
+  // const [theme, setTheme] = useState<Theme>(Theme.DARK);
+  const theme = useRef<Theme>(Theme.DARK);
+
   const toggle = () => {
-    if (theme === Theme.DARK) {
-      setTheme(Theme.LIGHT);
+    // if (theme === Theme.DARK) {
+    //   setTheme(Theme.LIGHT);
+    //   document.body.classList.add("light");
+    // } else {
+    //   setTheme(Theme.DARK);
+    //   document.body.classList.remove("light");
+    // }
+    if (theme.current === Theme.DARK) {
+      theme.current = Theme.LIGHT;
       document.body.classList.add("light");
     } else {
-      setTheme(Theme.DARK);
+      theme.current = Theme.DARK;
       document.body.classList.remove("light");
     }
   };
