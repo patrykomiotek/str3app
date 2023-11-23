@@ -6,6 +6,7 @@ import {
   AuthContext,
   AuthProvider,
 } from "../components/AuthContext/AuthContext";
+import { Stepper } from "../components/Stepper/Stepper";
 
 export const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ export const HomePage = () => {
       </Helmet>
       <h1>Home</h1>
       <Generator />
+      <Stepper />
 
       <AuthProvider>
         <AuthInfo />
