@@ -35,7 +35,7 @@ export const Stepper = () => {
   return (
     <div>
       <Button label="-" onClick={() => dispatch(decrement())} />
-      {state.count}
+      <span className="mx-4">{state.count}</span>
       <Button label="+" onClick={() => dispatch(increment())} />
     </div>
   );

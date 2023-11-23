@@ -3,6 +3,7 @@ import { ForwardedRef, MouseEventHandler, forwardRef } from "react";
 type Props = {
   label: string;
   onMouseEnter: MouseEventHandler<HTMLButtonElement>;
+  onMouseLeave: MouseEventHandler<HTMLButtonElement>;
 };
 
 const styles = {
@@ -11,9 +12,17 @@ const styles = {
 };
 
 export const MagicButton = forwardRef(
-  ({ label, onMouseEnter }: Props, ref: ForwardedRef<HTMLButtonElement>) => {
+  (
+    { label, onMouseEnter, onMouseLeave }: Props,
+    ref: ForwardedRef<HTMLButtonElement>
+  ) => {
     return (
-      <button style={styles} ref={ref} onMouseEnter={onMouseEnter}>
+      <button
+        style={styles}
+        ref={ref}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
         {label}
       </button>
     );

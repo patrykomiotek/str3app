@@ -54,27 +54,34 @@ export const RegistrationFormState = () => {
         Email: {formData.email} password: {formData.password}
       </Text>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="my-2">
           <label htmlFor="email">E-mail</label>
           <input
             id="email"
             type="email"
             value={email}
             onChange={handleChange}
+            className="border-2 border-stone-700"
           />
         </div>
-        <div>
+        <div className="my-2">
           <label htmlFor="password">Password</label>
           <input
             id="password"
             type="password"
             value={password}
             onChange={handleChange}
+            className="border-2 border-stone-700"
           />
         </div>
-        <div>
+        <div className="my-2">
           <label htmlFor="language">Language</label>
-          <input id="language" value={language} onChange={handleChange} />
+          <input
+            id="language"
+            value={language}
+            onChange={handleChange}
+            className="border-2 border-stone-700"
+          />
         </div>
         <Button type="submit" label="Send" />
       </form>

@@ -8,7 +8,7 @@ export const ProductsPage = () => {
       <Helmet>
         <title>{Route.PRODUCT_LIST.title}</title>
       </Helmet>
-      <h1>Products</h1>
+      <h1>{Route.PRODUCT_LIST.title}</h1>
       <ProductsList />
     </div>
   );

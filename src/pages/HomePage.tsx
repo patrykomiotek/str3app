@@ -14,15 +14,7 @@ export const HomePage = () => {
       <Helmet>
         <title>{Route.HOME.title}</title>
       </Helmet>
-      <h1>Home</h1>
-      <Generator />
-      <Stepper />
-
-      <AuthProvider>
-        <AuthInfo />
-      </AuthProvider>
-
-      {/* <AuthInfo /> */}
+      <h1>{Route.HOME.title}</h1>
     </div>
   );
 };

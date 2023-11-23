@@ -7,7 +7,7 @@ export const AboutPage = () => {
       <Helmet>
         <title>{Route.ABOUT.title}</title>
       </Helmet>
-      <h1>About</h1>
+      <h1>{Route.ABOUT.title}</h1>
     </div>
   );
 };

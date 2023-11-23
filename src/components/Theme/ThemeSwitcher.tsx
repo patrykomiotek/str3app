@@ -14,7 +14,7 @@ export const ThemeSwitcher = () => {
   const icon = theme === Theme.LIGHT ? faMoon : faSun;
 
   return (
-    <div className="ml-4">
+    <div className="ml-4 w-[40px]">
       <FontAwesomeIcon
         icon={icon}
         onClick={handleClick}

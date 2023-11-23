@@ -8,7 +8,7 @@ export const CreateProductPage = () => {
       <Helmet>
         <title>{Route.CREATE_PRODUCT.title}</title>
       </Helmet>
-      <h1>Create product</h1>
+      <h1>{Route.CREATE_PRODUCT.title}</h1>
       <CreateProduct />
     </div>
   );

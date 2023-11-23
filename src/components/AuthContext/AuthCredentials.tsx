@@ -1,5 +1,6 @@
 import { MouseEventHandler } from "react";
 import { useAuthContext } from "./AuthContext";
+import { Button } from "../../ui";
 
 export const AuthCredentials = () => {
   const context = useAuthContext();
@@ -10,9 +11,9 @@ export const AuthCredentials = () => {
 
   return (
     <div>
-      <h3>AuthCredentials</h3>
+      <h3 className="text-2xl">AuthCredentials</h3>
       <p>Is user logged? {context.isLoggedIn ? "YES" : "NO"}</p>
-      <button onClick={handleClick}>Toggle</button>
+      <Button label="Toggle" onClick={handleClick} />
     </div>
   );
 };

@@ -19,7 +19,7 @@ export const ProductDetailPage = () => {
       <Helmet>
         <title>{Route.PRODUCT_DETAILS.title}</title>
       </Helmet>
-      <h1>Product details</h1>
+      <h1>{Route.PRODUCT_DETAILS.title}</h1>
       <ProductDetails id={id} />
     </div>
   );

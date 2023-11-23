@@ -7,7 +7,7 @@ export const ContactPage = () => {
       <Helmet>
         <title>{Route.CONTACT.title}</title>
       </Helmet>
-      <h1>Contact</h1>
+      <h1>{Route.CONTACT.title}</h1>
     </div>
   );
 };
