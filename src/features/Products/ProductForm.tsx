@@ -7,7 +7,11 @@ type FieldValues = {
 };
 
 export const ProductForm = () => {
-  const { register, handleSubmit } = useForm<FieldValues>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FieldValues>();
 
   const handleProductForm: SubmitHandler<FieldValues> = (data) => {
     console.log(data);
@@ -17,11 +21,13 @@ export const ProductForm = () => {
     <div>
       <form onSubmit={handleSubmit(handleProductForm)}>
         <Input label="Name" {...register("name", { required: true })} />
+        {errors.name && <p>Field is required</p>}
         <Input
           label="Price"
           type="number"
           {...register("price", { valueAsNumber: true, required: true })}
         />
+        {errors.price && <p>Field is required</p>}
         <Button label="Send" />
       </form>
     </div>
