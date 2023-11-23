@@ -5,10 +5,11 @@ import { Route } from "../../routes";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
+import { Button } from "../../ui";
 
 export const ProductsList = () => {
   // const { data, isLoading, isError } = useApi<ProductDto[]>(fetchProducts);
-  const { data, isLoading, isError } = useQuery<ProductDto[]>({
+  const { data, isLoading, isError, refetch } = useQuery<ProductDto[]>({
     queryKey: ["products"],
     queryFn: fetchProducts,
   });
@@ -37,6 +38,7 @@ export const ProductsList = () => {
         >
           <span>Create product</span>
         </Link>
+        <Button label="Refetch" onClick={() => refetch()} />
         <ul>
           {data &&
             data.map((elem) => (
