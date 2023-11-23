@@ -16,9 +16,10 @@ export const useViewPort = () => {
     window.addEventListener("resize", handleResize);
 
     return () => {
+      // componentWillUnmount
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, []); // componentDidMount
 
   return size;
 };

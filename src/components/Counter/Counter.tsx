@@ -11,7 +11,7 @@ export const Counter = () => {
     return () => {
       clearInterval(id);
     };
-  }, []);
+  }, []); // [] componentDidMount
 
   return <div>Count: {count}</div>;
 };

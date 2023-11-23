@@ -1,4 +1,9 @@
-import { ChangeEventHandler, FormEventHandler, useState } from "react";
+import {
+  ChangeEventHandler,
+  FormEventHandler,
+  useEffect,
+  useState,
+} from "react";
 import { Button, Text } from "../../ui";
 
 interface FormData {
@@ -13,6 +18,14 @@ export const RegistrationFormState = () => {
     password: "",
     language: "",
   });
+
+  useEffect(() => {
+    // componentDidMount
+  }, []);
+
+  useEffect(() => {
+    // componentDidUpdate or componentDidMount
+  }, [formData.email]);
 
   // const handleChange = (event: ChangeEvent) => {
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
