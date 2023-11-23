@@ -1,12 +1,12 @@
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { Button, Input } from "../../ui";
+import { FieldValues } from "../types/dtos";
 
-type FieldValues = {
-  name: string;
-  price: number;
+type Props = {
+  onSubmit: (data: FieldValues) => void;
 };
 
-export const ProductForm = () => {
+export const ProductForm = ({ onSubmit }: Props) => {
   const {
     register,
     handleSubmit,
@@ -14,7 +14,8 @@ export const ProductForm = () => {
   } = useForm<FieldValues>();
 
   const handleProductForm: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
+    // console.log(data);
+    onSubmit(data);
   };
 
   return (

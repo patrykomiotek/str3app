@@ -12,6 +12,7 @@ import { ProductsList } from "./features/Products/ProductsList";
 import { ProductDetails } from "./features/Products/ProductDetails";
 import { ViewPort } from "./components/ViewPort";
 import { ProductForm } from "./features/Products/ProductForm";
+import { CreateProduct } from "./features/Products/CreateProduct";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -47,7 +48,8 @@ function App() {
       {/* <ProductsList /> */}
       {/* <ProductDetails id="rec5c99tUqiFYiLb8" /> */}
       {/* <ViewPort /> */}
-      <ProductForm />
+      {/* <ProductForm /> */}
+      <CreateProduct />
     </>
   );
 }
