@@ -3,9 +3,21 @@ import { ProductDto } from "../types/products";
 import { useApi } from "../../hooks/useApi";
 import { Route } from "../../routes";
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 
 export const ProductsList = () => {
-  const { data, isLoading, isError } = useApi<ProductDto[]>(fetchProducts);
+  // const { data, isLoading, isError } = useApi<ProductDto[]>(fetchProducts);
+  const { data, isLoading, isError } = useQuery<ProductDto[]>({
+    queryKey: ["products"],
+    queryFn: fetchProducts,
+  });
+
+  useEffect(() => {
+    // dispatch(loadProducts())
+  }, [data]);
+
+  // result.
 
   if (isLoading) {
     return <p>Loading...</p>;

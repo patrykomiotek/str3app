@@ -15,11 +15,19 @@ import { ProductForm } from "./features/Products/ProductForm";
 import { CreateProduct } from "./features/Products/CreateProduct";
 import { RouterProvider } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { router } from "./routes";
 import { HomePage } from "./pages/HomePage";
 import { ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
 import { ThemeProvider } from "./components/Theme/ThemeContext";
 import { ThemeSwitcher } from "./components/Theme/ThemeSwitcher";
+
+const queryClient = new QueryClient();
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -41,26 +49,29 @@ function App() {
     <HelmetProvider>
       <ThemeProvider>
         <ErrorBoundary fallback={<p>Routing fallback!</p>}>
-          <ThemeSwitcher />
-          <RouterProvider router={router} />
-          {/* <Text>Today is Wednesday</Text> */}
-          {/* <Button label="Click me" /> */}
-          {/* <Button label="Click me" bgColor="midnight-blue" color="clouds" /> */}
-          {/* <Generator /> */}
-          {/* <Counter /> */}
-          {/* <RegistrationFormState /> */}
-          {/* <RegistrationFormRefs /> */}
-          {/* <RegistrationFormRefsLegacy /> */}
-          {/* <MagicButton
+          <QueryClientProvider client={queryClient}>
+            <ThemeSwitcher />
+            <RouterProvider router={router} />
+            {/* <Text>Today is Wednesday</Text> */}
+            {/* <Button label="Click me" /> */}
+            {/* <Button label="Click me" bgColor="midnight-blue" color="clouds" /> */}
+            {/* <Generator /> */}
+            {/* <Counter /> */}
+            {/* <RegistrationFormState /> */}
+            {/* <RegistrationFormRefs /> */}
+            {/* <RegistrationFormRefsLegacy /> */}
+            {/* <MagicButton
         ref={buttonRef}
         label="Click me"
         onMouseEnter={handleMouseEnter}
       /> */}
-          {/* <ProductsList /> */}
-          {/* <ProductDetails id="rec5c99tUqiFYiLb8" /> */}
-          {/* <ViewPort /> */}
-          {/* <ProductForm /> */}
-          {/* <CreateProduct /> */}
+            {/* <ProductsList /> */}
+            {/* <ProductDetails id="rec5c99tUqiFYiLb8" /> */}
+            {/* <ViewPort /> */}
+            {/* <ProductForm /> */}
+            {/* <CreateProduct /> */}
+            <ReactQueryDevtools initialIsOpen={true} />
+          </QueryClientProvider>
         </ErrorBoundary>
       </ThemeProvider>
     </HelmetProvider>
