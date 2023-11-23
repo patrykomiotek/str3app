@@ -14,7 +14,7 @@ export const CreateProduct = () => {
 
   return (
     <div>
-      <h1>Create Product</h1>
+      <h1>Create Product below</h1>
       <ProductForm onSubmit={handleSubmit} />
     </div>
   );
