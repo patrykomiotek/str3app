@@ -18,6 +18,8 @@ import { HelmetProvider } from "react-helmet-async";
 import { router } from "./routes";
 import { HomePage } from "./pages/HomePage";
 import { ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
+import { ThemeProvider } from "./components/Theme/ThemeContext";
+import { ThemeSwitcher } from "./components/Theme/ThemeSwitcher";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -37,27 +39,30 @@ function App() {
 
   return (
     <HelmetProvider>
-      <ErrorBoundary fallback={<p>Routing fallback!</p>}>
-        <RouterProvider router={router} />
-        {/* <Text>Today is Wednesday</Text> */}
-        {/* <Button label="Click me" /> */}
-        {/* <Button label="Click me" bgColor="midnight-blue" color="clouds" /> */}
-        {/* <Generator /> */}
-        {/* <Counter /> */}
-        {/* <RegistrationFormState /> */}
-        {/* <RegistrationFormRefs /> */}
-        {/* <RegistrationFormRefsLegacy /> */}
-        {/* <MagicButton
+      <ThemeProvider>
+        <ErrorBoundary fallback={<p>Routing fallback!</p>}>
+          <ThemeSwitcher />
+          <RouterProvider router={router} />
+          {/* <Text>Today is Wednesday</Text> */}
+          {/* <Button label="Click me" /> */}
+          {/* <Button label="Click me" bgColor="midnight-blue" color="clouds" /> */}
+          {/* <Generator /> */}
+          {/* <Counter /> */}
+          {/* <RegistrationFormState /> */}
+          {/* <RegistrationFormRefs /> */}
+          {/* <RegistrationFormRefsLegacy /> */}
+          {/* <MagicButton
         ref={buttonRef}
         label="Click me"
         onMouseEnter={handleMouseEnter}
       /> */}
-        {/* <ProductsList /> */}
-        {/* <ProductDetails id="rec5c99tUqiFYiLb8" /> */}
-        {/* <ViewPort /> */}
-        {/* <ProductForm /> */}
-        {/* <CreateProduct /> */}
-      </ErrorBoundary>
+          {/* <ProductsList /> */}
+          {/* <ProductDetails id="rec5c99tUqiFYiLb8" /> */}
+          {/* <ViewPort /> */}
+          {/* <ProductForm /> */}
+          {/* <CreateProduct /> */}
+        </ErrorBoundary>
+      </ThemeProvider>
     </HelmetProvider>
   );
 }
