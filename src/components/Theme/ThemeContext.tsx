@@ -1,4 +1,11 @@
-import { createContext, useContext, useRef, useState } from "react";
+import {
+  MutableRefObject,
+  createContext,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 enum Theme {
   LIGHT = "light",
@@ -6,11 +13,25 @@ enum Theme {
 }
 
 type ThemeContextType = {
-  theme: Theme;
+  theme: MutableRefObject<Theme | null>;
   toggle: () => void;
 };
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
+
+const getMode = () => {
+  if (window.matchMedia) {
+    const matchesLightMode = window.matchMedia(
+      "(prefers-color-scheme: light)"
+    ).matches;
+    return matchesLightMode ? Theme.LIGHT : Theme.DARK;
+  }
+  // there may not be window.matchMedia object - eg. in tests
+  return null;
+};
+
+const addLightCssClass = () => document.body.classList.add("light");
+const removeLightCssClass = () => document.body.classList.remove("light");
 
 export const useThemeContext = () => {
   const context = useContext(ThemeContext);
@@ -22,8 +43,35 @@ export const useThemeContext = () => {
 
 const useTheme = () => {
   // const [theme, setTheme] = useState<Theme>(Theme.DARK);
-  const theme = useRef<Theme>(Theme.DARK); // Map, Set
+  const theme = useRef<Theme | null>(getMode()); // Map, Set
   // const theme = useRef(new Set()); // Map, Set
+
+  useEffect(() => {
+    // on the mount of component set additional class
+    const themeMode = getMode();
+    if (themeMode === Theme.LIGHT) {
+      addLightCssClass();
+    }
+
+    // add listener for change preferences
+    const handleSchemeChange = (event: MediaQueryListEvent) => {
+      if (event.matches) {
+        addLightCssClass();
+      } else {
+        removeLightCssClass();
+      }
+    };
+
+    let query: MediaQueryList;
+    if (themeMode !== null) {
+      query = window.matchMedia("(prefers-color-scheme: light)");
+      query.addEventListener("change", handleSchemeChange);
+    }
+
+    return () => {
+      query?.removeEventListener("change", handleSchemeChange);
+    };
+  }, []);
 
   const toggle = () => {
     // if (theme === Theme.DARK) {
@@ -35,10 +83,10 @@ const useTheme = () => {
     // }
     if (theme.current === Theme.DARK) {
       theme.current = Theme.LIGHT;
-      document.body.classList.add("light");
+      addLightCssClass();
     } else {
       theme.current = Theme.DARK;
-      document.body.classList.remove("light");
+      removeLightCssClass();
     }
   };
   return { theme, toggle };
