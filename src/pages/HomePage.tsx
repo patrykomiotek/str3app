@@ -2,12 +2,12 @@ import { Helmet } from "react-helmet-async";
 import { Route } from "../routes";
 import { Generator } from "../components/Generator";
 import { AuthInfo } from "../components/AuthContext/AuthInfo";
-import { AuthContext } from "../components/AuthContext/AuthContext";
-import { useState } from "react";
+import {
+  AuthContext,
+  AuthProvider,
+} from "../components/AuthContext/AuthContext";
 
 export const HomePage = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   return (
     <div>
       <Helmet>
@@ -16,9 +16,9 @@ export const HomePage = () => {
       <h1>Home</h1>
       <Generator />
 
-      <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+      <AuthProvider>
         <AuthInfo />
-      </AuthContext.Provider>
+      </AuthProvider>
     </div>
   );
 };
