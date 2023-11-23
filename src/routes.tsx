@@ -3,7 +3,8 @@ import { Layout } from "./components/Layout/Layout";
 import { HomePage } from "./pages/Home";
 import { AboutPage } from "./pages/About";
 import { ContactPage } from "./pages/Contact";
-import { ProductsPage } from "./pages/Products";
+import { ProductsPage } from "./pages/ProductsPage";
+import { ProductDetailPage } from "./pages/ProductDetailsPage";
 
 export const Route = {
   HOME: {
@@ -21,6 +22,11 @@ export const Route = {
   PRODUCT_LIST: {
     path: "/products",
     title: "Products page",
+  },
+  PRODUCT_DETAILS: {
+    path: "/products/:id",
+    title: "Product details",
+    dynamicPath: (id: string) => `/products/${id}`,
   },
 };
 
@@ -44,6 +50,10 @@ export const router = createBrowserRouter([
       {
         path: Route.PRODUCT_LIST.path,
         element: <ProductsPage />,
+      },
+      {
+        path: Route.PRODUCT_DETAILS.path,
+        element: <ProductDetailPage />,
       },
     ],
   },

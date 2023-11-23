@@ -1,6 +1,8 @@
 import { fetchProducts } from "../services/products";
 import { ProductDto } from "../types/products";
 import { useApi } from "../../hooks/useApi";
+import { Route } from "../../routes";
+import { Link } from "react-router-dom";
 
 export const ProductsList = () => {
   const { data, isLoading, isError } = useApi<ProductDto[]>(fetchProducts);
@@ -21,7 +23,10 @@ export const ProductsList = () => {
           {data &&
             data.map((elem) => (
               <li key={elem.id}>
-                {elem.fields.name} {elem.fields.description}
+                <Link to={`${Route.PRODUCT_DETAILS.dynamicPath(elem.id)}`}>
+                  {elem.fields.name}
+                </Link>{" "}
+                {elem.fields.description}
               </li>
             ))}
         </ul>
