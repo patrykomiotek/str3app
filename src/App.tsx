@@ -11,6 +11,7 @@ import { MagicButton } from "./ui/MagicButton";
 import { ProductsList } from "./features/Products/ProductsList";
 import { ProductDetails } from "./features/Products/ProductDetails";
 import { ViewPort } from "./components/ViewPort";
+import { ProductForm } from "./features/Products/ProductForm";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -44,8 +45,9 @@ function App() {
         onMouseEnter={handleMouseEnter}
       /> */}
       {/* <ProductsList /> */}
-      <ProductDetails id="rec5c99tUqiFYiLb8" />
+      {/* <ProductDetails id="rec5c99tUqiFYiLb8" /> */}
       {/* <ViewPort /> */}
+      <ProductForm />
     </>
   );
 }
