@@ -19,6 +19,8 @@ export const HomePage = () => {
       <AuthProvider>
         <AuthInfo />
       </AuthProvider>
+
+      {/* <AuthInfo /> */}
     </div>
   );
 };

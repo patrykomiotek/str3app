@@ -1,8 +1,8 @@
-import { MouseEventHandler, useContext } from "react";
-import { AuthContext } from "./AuthContext";
+import { MouseEventHandler } from "react";
+import { useAuthContext } from "./AuthContext";
 
 export const AuthCredentials = () => {
-  const context = useContext(AuthContext);
+  const context = useAuthContext();
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
     context.toggle();

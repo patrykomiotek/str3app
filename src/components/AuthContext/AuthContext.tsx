@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 type AuthContextType = {
   isLoggedIn: boolean; // useState -> value
@@ -7,14 +7,19 @@ type AuthContextType = {
   toggle: () => void;
 };
 
-export const AuthContext = createContext<AuthContextType>({
-  isLoggedIn: false,
-  logIn: () => null,
-  logOut: () => null,
-  toggle: () => null,
-});
+export const AuthContext = createContext<AuthContextType | undefined>(
+  undefined
+);
 
-const useAuthContext = () => {
+export const useAuthContext = () => {
+  const context = useContext(AuthContext);
+  if (context) {
+    return context;
+  }
+  throw new Error("Component should be placed inside AuthProvider");
+};
+
+const useAuth = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const logIn = () => setIsLoggedIn(true);
@@ -28,9 +33,7 @@ type Props = { children: React.ReactNode };
 
 export const AuthProvider = ({ children }: Props) => {
   return (
-    <AuthContext.Provider value={useAuthContext()}>
-      {children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={useAuth()}>{children}</AuthContext.Provider>
   );
 };
 
