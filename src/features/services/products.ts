@@ -1,14 +1,33 @@
+import { ZodError, z } from "zod";
 import { api } from "../../services/config";
 import { FieldValues } from "../types/dtos";
 import { ProductDto, ProductsResponse } from "../types/products";
 
+const productsSchema = z.array(
+  z.object({
+    id: z.string(),
+    fields: z.object({
+      name: z.string(),
+      description: z.string(),
+      price: z.number(),
+    }),
+  })
+);
+
 export const fetchProducts = async () => {
-  // TODO: parse
   try {
     const response = await api.get<ProductsResponse>("/products");
+
+    const result = productsSchema.parse(response.data.records);
+    console.log("result", result);
+
     return response.data.records;
-  } catch {
-    // TODO:
+  } catch (error) {
+    console.error(error);
+    if (error instanceof ZodError) {
+      // TODO: return valid data or something else
+    }
+
     return [];
   }
 };
