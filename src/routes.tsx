@@ -6,6 +6,7 @@ import { ContactPage } from "./pages/ContactPage";
 import { ProductsPage } from "./pages/ProductsPage";
 import { ProductDetailPage } from "./pages/ProductDetailsPage";
 import { CreateProductPage } from "./pages/CreateProductsPage";
+import { ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
 
 export const Route = {
   HOME: {
@@ -39,6 +40,7 @@ export const router = createBrowserRouter([
   {
     path: Route.HOME.path,
     element: <Layout />,
+    // errorElement: <ErrorBoundary />,
     children: [
       {
         path: Route.HOME.path,

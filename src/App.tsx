@@ -16,6 +16,8 @@ import { CreateProduct } from "./features/Products/CreateProduct";
 import { RouterProvider } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { router } from "./routes";
+import { HomePage } from "./pages/HomePage";
+import { ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -35,25 +37,27 @@ function App() {
 
   return (
     <HelmetProvider>
-      <RouterProvider router={router} />
-      {/* <Text>Today is Wednesday</Text> */}
-      {/* <Button label="Click me" /> */}
-      {/* <Button label="Click me" bgColor="midnight-blue" color="clouds" /> */}
-      {/* <Generator /> */}
-      {/* <Counter /> */}
-      {/* <RegistrationFormState /> */}
-      {/* <RegistrationFormRefs /> */}
-      {/* <RegistrationFormRefsLegacy /> */}
-      {/* <MagicButton
+      <ErrorBoundary fallback={<p>Routing fallback!</p>}>
+        <RouterProvider router={router} />
+        {/* <Text>Today is Wednesday</Text> */}
+        {/* <Button label="Click me" /> */}
+        {/* <Button label="Click me" bgColor="midnight-blue" color="clouds" /> */}
+        {/* <Generator /> */}
+        {/* <Counter /> */}
+        {/* <RegistrationFormState /> */}
+        {/* <RegistrationFormRefs /> */}
+        {/* <RegistrationFormRefsLegacy /> */}
+        {/* <MagicButton
         ref={buttonRef}
         label="Click me"
         onMouseEnter={handleMouseEnter}
       /> */}
-      {/* <ProductsList /> */}
-      {/* <ProductDetails id="rec5c99tUqiFYiLb8" /> */}
-      {/* <ViewPort /> */}
-      {/* <ProductForm /> */}
-      {/* <CreateProduct /> */}
+        {/* <ProductsList /> */}
+        {/* <ProductDetails id="rec5c99tUqiFYiLb8" /> */}
+        {/* <ViewPort /> */}
+        {/* <ProductForm /> */}
+        {/* <CreateProduct /> */}
+      </ErrorBoundary>
     </HelmetProvider>
   );
 }

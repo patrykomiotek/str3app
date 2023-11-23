@@ -13,6 +13,8 @@ export const Generator = () => {
     setId(uuidv4());
   };
 
+  // throw new Error("Error!!! ");
+
   return (
     <div>
       <p>{id}</p>
