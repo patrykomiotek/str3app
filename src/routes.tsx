@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
-import { HomePage } from "./pages/Home";
-import { AboutPage } from "./pages/About";
-import { ContactPage } from "./pages/Contact";
+import { HomePage } from "./pages/HomePage";
+import { AboutPage } from "./pages/AboutPage";
+import { ContactPage } from "./pages/ContactPage";
 import { ProductsPage } from "./pages/ProductsPage";
 import { ProductDetailPage } from "./pages/ProductDetailsPage";
 import { CreateProductPage } from "./pages/CreateProductsPage";

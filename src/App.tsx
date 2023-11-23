@@ -14,6 +14,7 @@ import { ViewPort } from "./components/ViewPort";
 import { ProductForm } from "./features/Products/ProductForm";
 import { CreateProduct } from "./features/Products/CreateProduct";
 import { RouterProvider } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { router } from "./routes";
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
   };
 
   return (
-    <>
+    <HelmetProvider>
       <RouterProvider router={router} />
       {/* <Text>Today is Wednesday</Text> */}
       {/* <Button label="Click me" /> */}
@@ -53,7 +54,7 @@ function App() {
       {/* <ViewPort /> */}
       {/* <ProductForm /> */}
       {/* <CreateProduct /> */}
-    </>
+    </HelmetProvider>
   );
 }
 
