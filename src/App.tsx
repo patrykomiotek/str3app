@@ -44,8 +44,8 @@ function App() {
         onMouseEnter={handleMouseEnter}
       /> */}
       {/* <ProductsList /> */}
-      {/* <ProductDetails id="rec5c99tUqiFYiLb8" /> */}
-      <ViewPort />
+      <ProductDetails id="rec5c99tUqiFYiLb8" />
+      {/* <ViewPort /> */}
     </>
   );
 }
