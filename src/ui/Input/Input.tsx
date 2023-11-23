@@ -14,9 +14,16 @@ export const Input = forwardRef(
     const id = useId();
 
     return (
-      <div>
-        <label htmlFor={id}>{label}</label>
-        <input ref={ref} {...rest} id={id} />
+      <div className="my-2">
+        <label htmlFor={id} className="mr-2">
+          {label}
+        </label>
+        <input
+          ref={ref}
+          {...rest}
+          id={id}
+          className="border-2 border-stone-700"
+        />
       </div>
     );
   }

@@ -19,6 +19,7 @@ export const ProductsList = () => {
     <>
       {/* <h1>Products</h1> */}
       <div>
+        <Link to={Route.CREATE_PRODUCT.path}>Create product</Link>
         <ul>
           {data &&
             data.map((elem) => (
