@@ -6,5 +6,8 @@ export const ThemeSwitcher = () => {
   const handleClick = () => {
     context.toggle();
   };
+
+  console.log(context.theme);
+
   return <Button label="Switch theme" onClick={handleClick} />;
 };

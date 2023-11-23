@@ -53,7 +53,6 @@ function App() {
         <ErrorBoundary fallback={<p>Routing fallback!</p>}>
           <Provider store={store}>
             <QueryClientProvider client={queryClient}>
-              <ThemeSwitcher />
               <RouterProvider router={router} />
               {/* <Text>Today is Wednesday</Text> */}
               {/* <Button label="Click me" /> */}
