@@ -18,8 +18,8 @@ export const fetchProducts = async () => {
   try {
     const response = await api.get<ProductsResponse>("/products");
 
-    const result = productsSchema.parse(response.data.records);
-    console.log("result", result);
+    // const result = productsSchema.parse(response.data.records);
+    // console.log("result", result);
 
     return response.data.records;
   } catch (error) {

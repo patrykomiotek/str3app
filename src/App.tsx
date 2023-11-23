@@ -13,6 +13,8 @@ import { ProductDetails } from "./features/Products/ProductDetails";
 import { ViewPort } from "./components/ViewPort";
 import { ProductForm } from "./features/Products/ProductForm";
 import { CreateProduct } from "./features/Products/CreateProduct";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -32,6 +34,7 @@ function App() {
 
   return (
     <>
+      <RouterProvider router={router} />
       {/* <Text>Today is Wednesday</Text> */}
       {/* <Button label="Click me" /> */}
       {/* <Button label="Click me" bgColor="midnight-blue" color="clouds" /> */}
@@ -45,7 +48,7 @@ function App() {
         label="Click me"
         onMouseEnter={handleMouseEnter}
       /> */}
-      <ProductsList />
+      {/* <ProductsList /> */}
       {/* <ProductDetails id="rec5c99tUqiFYiLb8" /> */}
       {/* <ViewPort /> */}
       {/* <ProductForm /> */}
