@@ -18,6 +18,7 @@ const mockedUseViewPort = useViewPort as jest.Mock;
 describe("ViewPort component", () => {
   it("should render viewport values (100x200)", () => {
     mockedUseViewPort.mockImplementationOnce(() => ({ x: 100, y: 200 }));
+    // mockedUseViewPort.mockRejectedValueOnce
     const { debug } = render(<ViewPort />);
     debug();
     expect(screen.getByText(/x: 100, y: 200/i)).toBeInTheDocument();
