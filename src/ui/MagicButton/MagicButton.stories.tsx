@@ -13,17 +13,18 @@ export default meta;
 
 export const _MagicButton = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const handleMouseEnter: MouseEventHandler<HTMLButtonElement> = (event) => {
-    if (buttonRef.current) {
-      buttonRef.current.style.backgroundColor = "#27ae60";
-    }
-  };
 
   useEffect(() => {
     if (buttonRef.current) {
       buttonRef.current.style.backgroundColor = "#c0392b";
     }
   }, []);
+
+  const handleMouseEnter: MouseEventHandler<HTMLButtonElement> = (event) => {
+    if (buttonRef.current) {
+      buttonRef.current.style.backgroundColor = "#27ae60";
+    }
+  };
 
   const handleMouseLeave: MouseEventHandler<HTMLButtonElement> = (event) => {
     if (buttonRef.current) {
