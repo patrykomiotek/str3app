@@ -3,7 +3,7 @@
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["components/*"],
-      "@ui/*": ["ui/*"],
+      "@ui": ["ui"],
       "@atoms/*": ["ui/atoms/*"],
       "@molecules/*": ["ui/molecules/*"],
       "@organisms/*": ["ui/organisms/*"],

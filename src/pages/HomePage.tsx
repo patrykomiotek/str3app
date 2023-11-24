@@ -7,6 +7,7 @@ import {
   AuthProvider,
 } from "../components/AuthContext/AuthContext";
 import { Stepper } from "../components/Stepper/Stepper";
+import { Counter } from "@features/Counter";
 
 export const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ export const HomePage = () => {
         <title>{Route.HOME.title}</title>
       </Helmet>
       <h1>{Route.HOME.title}</h1>
+      <Counter />
     </div>
   );
 };
