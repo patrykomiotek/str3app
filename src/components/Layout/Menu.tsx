@@ -49,7 +49,9 @@ export const Menu = () => {
             <Link to={Route.MAGIC_BUTTON.path}>Magic Button</Link>
           </li>
           <li className="mr-3">
-            <Basket />
+            <Link to={Route.ORDER_SUMMARY.path}>
+              <Basket />
+            </Link>
           </li>
           <li className="mr-3">
             <ThemeSwitcher />

@@ -14,6 +14,7 @@ import { RegistrationFormRefsPage } from "./pages/RegistrationFormStatePage";
 import { CounterPage } from "./pages/CounterPage";
 import { ViewPortPage } from "./pages/ViewPortPage";
 import { MagicButtonPage } from "./pages/MagicButtonPage";
+import { OrderSummaryPage } from "@pages/OrderSummaryPage";
 
 export const Route = {
   HOME: {
@@ -40,6 +41,10 @@ export const Route = {
   PRODUCT_LIST: {
     path: "/products",
     title: "Products",
+  },
+  ORDER_SUMMARY: {
+    path: "/order-summary",
+    title: "Order Summary",
   },
   GENERATOR: {
     path: "/generator",
@@ -136,6 +141,10 @@ export const router = createBrowserRouter([
       {
         path: Route.MAGIC_BUTTON.path,
         element: <MagicButtonPage />,
+      },
+      {
+        path: Route.ORDER_SUMMARY.path,
+        element: <OrderSummaryPage />,
       },
     ],
   },
