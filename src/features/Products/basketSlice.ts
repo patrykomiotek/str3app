@@ -21,7 +21,9 @@ export const basketSlice = createSlice({
       // }
     },
     remove: (state, action: PayloadAction<ProductDto["id"]>) => {
-      state.products.filter((elem) => elem.id !== action.payload);
+      state.products = state.products.filter(
+        (elem) => elem.id !== action.payload
+      );
     },
   },
 });
