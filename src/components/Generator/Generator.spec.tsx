@@ -5,8 +5,9 @@ describe("Generator component", () => {
   // test('')
   it("should generate different values", () => {
     // getByLabel
-    const { debug } = render(<Generator />);
-    debug();
+    render(<Generator />);
+    // const { debug } = render(<Generator />);
+    // debug();
     const id = screen.getByText(/[a-z0-9-]{36}/i).textContent;
 
     // console.log(id);
