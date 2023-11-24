@@ -11,8 +11,8 @@ export const OrderSummary = () => {
   return (
     <div>
       <ul>
-        {products.map((elem) => (
-          <li key={elem.id}>
+        {products.map((elem, index) => (
+          <li key={`${elem.id}-${index}`}>
             {elem.fields.name}{" "}
             <FontAwesomeIcon
               icon={faMinusCircle}
