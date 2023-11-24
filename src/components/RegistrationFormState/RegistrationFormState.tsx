@@ -13,6 +13,7 @@ interface FormData {
 }
 
 export const RegistrationFormState = () => {
+  const [validationError, setValidationError] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     email: "jan@wp.pl",
     password: "",
@@ -26,6 +27,16 @@ export const RegistrationFormState = () => {
   useEffect(() => {
     // componentDidUpdate or componentDidMount
   }, [formData.email]);
+
+  useEffect(() => {
+    if (formData.language.toLocaleLowerCase() === "php") {
+      setFormData({
+        ...formData,
+        language: "***** ***",
+      });
+      setValidationError(true);
+    }
+  }, [formData.language]);
 
   // const handleChange = (event: ChangeEvent) => {
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -82,6 +93,7 @@ export const RegistrationFormState = () => {
             onChange={handleChange}
             className="border-2 border-stone-700"
           />
+          {validationError && <p>Invalid language</p>}
         </div>
         <Button type="submit" label="Send" />
       </form>
