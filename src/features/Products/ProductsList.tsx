@@ -37,13 +37,15 @@ export const ProductsList = () => {
     <>
       {/* <h1>Products</h1> */}
       <div className="mt-2">
-        <Link
-          to={Route.CREATE_PRODUCT.path}
-          className="bg-blue-500 hover:bg-blue-700 text-white hover:text-white font-bold py-2 px-4 rounded"
-        >
-          <span>Create product</span>
-        </Link>
-        <Button label="Refetch" onClick={() => refetch()} />
+        <div className="mb-4 w-auto">
+          <Link
+            to={Route.CREATE_PRODUCT.path}
+            className="bg-blue-500 hover:bg-blue-700 text-white hover:text-white font-bold py-2 px-4 rounded mr-4"
+          >
+            <span>Create product</span>
+          </Link>
+          <Button label="Refetch" onClick={() => refetch()} />
+        </div>
         <ul>
           {data &&
             data.map((elem) => (
@@ -55,7 +57,7 @@ export const ProductsList = () => {
                 <FontAwesomeIcon
                   icon={faPlusCircle}
                   onClick={() => dispatch(add(elem))}
-                  className="cursor-pointer"
+                  className="ml-2 cursor-pointer"
                 />
               </li>
             ))}
