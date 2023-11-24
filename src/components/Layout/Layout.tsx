@@ -5,12 +5,12 @@ import { ErrorBoundary } from "../ErrorBoundary/ErrorBoundary";
 
 export const Layout = () => {
   return (
-    <ErrorBoundary>
-      <div>
-        <Menu />
+    <div>
+      <Menu />
+      <ErrorBoundary>
         <Outlet />
-        <Footer />
-      </div>
-    </ErrorBoundary>
+      </ErrorBoundary>
+      <Footer />
+    </div>
   );
 };

@@ -23,24 +23,6 @@ export const App = () => {
           <Provider store={store}>
             <QueryClientProvider client={queryClient}>
               <RouterProvider router={router} />
-              {/* <Text>Today is Wednesday</Text> */}
-              {/* <Button label="Click me" /> */}
-              {/* <Button label="Click me" bgColor="midnight-blue" color="clouds" /> */}
-              {/* <Generator /> */}
-              {/* <Counter /> */}
-              {/* <RegistrationFormState /> */}
-              {/* <RegistrationFormRefs /> */}
-              {/* <RegistrationFormRefsLegacy /> */}
-              {/* <MagicButton
-        ref={buttonRef}
-        label="Click me"
-        onMouseEnter={handleMouseEnter}
-      /> */}
-              {/* <ProductsList /> */}
-              {/* <ProductDetails id="rec5c99tUqiFYiLb8" /> */}
-              {/* <ViewPort /> */}
-              {/* <ProductForm /> */}
-              {/* <CreateProduct /> */}
               <ReactQueryDevtools initialIsOpen={true} />
             </QueryClientProvider>
           </Provider>
