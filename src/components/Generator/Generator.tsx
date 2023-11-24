@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Profiler, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Button } from "../../ui";
 
@@ -15,10 +15,30 @@ export const Generator = () => {
 
   // throw new Error("Error!!! ");
 
+  const handleRender = (
+    id,
+    phase,
+    actualDuration,
+    baseDuration,
+    startTime,
+    commitTime
+  ) => {
+    console.log({
+      id,
+      phase,
+      actualDuration,
+      baseDuration,
+      startTime,
+      commitTime,
+    });
+  };
+
   return (
     <div>
-      <p>{id}</p>
-      <Button label="Refresh" onClick={handleClick} />
+      <Profiler id="generator" onRender={handleRender}>
+        <p>{id}</p>
+        <Button label="Refresh" onClick={handleClick} />
+      </Profiler>
     </div>
   );
 };
