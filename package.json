@@ -66,6 +66,7 @@
     "eslint-plugin-react-refresh": "^0.4.1",
     "eslint-plugin-storybook": "^0.6.12",
     "jest-axe": "^8.0.0",
+    "msw": "^2.0.8",
     "postcss": "^8.4.25",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.26",
@@ -73,5 +74,8 @@
     "typescript": "^5.0.2",
     "vite": "^4.4.0",
     "vite-tsconfig-paths": "^4.2.1"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
