@@ -4,7 +4,7 @@ import type { RootState } from "store";
 import { increment, decrement, incrementByAmount } from "./counterSlice";
 import { KeyboardEventHandler, useRef } from "react";
 
-export const Counter = () => {
+export const CounterRedux = () => {
   const counterValue = useSelector((state: RootState) => state.counter.value);
   const dispatch = useDispatch();
   const filedRef = useRef<HTMLInputElement>(null);
@@ -20,13 +20,13 @@ export const Counter = () => {
     <div>
       <Button label="-" onClick={() => dispatch(decrement())} />
       {counterValue}
+      <Button label="+" onClick={() => dispatch(increment())} />
       <Input
         label="Enter amount"
         ref={filedRef}
         type="number"
         onKeyDown={handleKeyDown}
       />
-      <Button label="+" onClick={() => dispatch(increment())} />
     </div>
   );
 };
