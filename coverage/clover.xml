@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1700829484936" clover="3.2.0">
+  <project timestamp="1700829484936" name="All files">
+    <metrics statements="26" coveredstatements="25" conditionals="2" coveredconditionals="2" methods="9" coveredmethods="7" elements="37" coveredelements="34" complexity="0" loc="26" ncloc="26" packages="5" files="9" classes="9"/>
+    <package name="components.Generator">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="Generator.tsx" path="/Users/patryk/Workspace/workshops/stretto3/str3app/src/components/Generator/Generator.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/patryk/Workspace/workshops/stretto3/str3app/src/components/Generator/index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="ui">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="/Users/patryk/Workspace/workshops/stretto3/str3app/src/ui/index.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="ui.Button">
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="Button.tsx" path="/Users/patryk/Workspace/workshops/stretto3/str3app/src/ui/Button/Button.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+        <line num="38" count="4" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/patryk/Workspace/workshops/stretto3/str3app/src/ui/Button/index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="ui.Input">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="Input.tsx" path="/Users/patryk/Workspace/workshops/stretto3/str3app/src/ui/Input/Input.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/patryk/Workspace/workshops/stretto3/str3app/src/ui/Input/index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="ui.Text">
+      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="Text.tsx" path="/Users/patryk/Workspace/workshops/stretto3/str3app/src/ui/Text/Text.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/patryk/Workspace/workshops/stretto3/str3app/src/ui/Text/index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
