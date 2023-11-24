@@ -19,7 +19,7 @@ export const useAuthContext = () => {
   throw new Error("Component should be placed inside AuthProvider");
 };
 
-const useAuth = () => {
+export const useAuth = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const logIn = () => setIsLoggedIn(true);
