@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "../../store";
 
 const meta = {
-  title: "Components/CounterRedux",
+  title: "Features/CounterRedux",
   component: CounterRedux,
   // tags: ["autodocs"],
 } satisfies Meta<typeof CounterRedux>;
