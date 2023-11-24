@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Route } from "../../routes";
 import { ThemeSwitcher } from "../Theme/ThemeSwitcher";
+import { Basket } from "@components/Basket";
 
 export const Menu = () => {
   return (
@@ -46,6 +47,9 @@ export const Menu = () => {
           </li>
           <li className="mr-3">
             <Link to={Route.MAGIC_BUTTON.path}>Magic Button</Link>
+          </li>
+          <li className="mr-3">
+            <Basket />
           </li>
           <li className="mr-3">
             <ThemeSwitcher />

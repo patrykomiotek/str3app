@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { fetchProducts } from "../services/products";
 import { ProductDto } from "../types/products";
 import { useApi } from "../../hooks/useApi";
@@ -6,6 +8,8 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { Button } from "../../ui";
+import { useDispatch } from "react-redux";
+import { add } from "./basketSlice";
 
 export const ProductsList = () => {
   // const { data, isLoading, isError } = useApi<ProductDto[]>(fetchProducts);
@@ -13,6 +17,7 @@ export const ProductsList = () => {
     queryKey: ["products"],
     queryFn: fetchProducts,
   });
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // dispatch(loadProducts())
@@ -47,6 +52,11 @@ export const ProductsList = () => {
                   {elem.fields.name}
                 </Link>{" "}
                 {elem.fields.description}
+                <FontAwesomeIcon
+                  icon={faPlusCircle}
+                  onClick={() => dispatch(add(elem))}
+                  className="cursor-pointer"
+                />
               </li>
             ))}
         </ul>
